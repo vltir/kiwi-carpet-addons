@@ -3,7 +3,8 @@
   "package": "com.vltir.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "CrashReport_noopMixin"
+    "CrashReport_noopMixin",
+    "TickCommandMixin"
   ],
   "client": [
   ],
