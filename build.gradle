@@ -21,7 +21,6 @@ loom {
     mods {
         "kiwi-carpet-addons" {
             sourceSet sourceSets.main
-            sourceSet sourceSets.client
         }
     }
 
