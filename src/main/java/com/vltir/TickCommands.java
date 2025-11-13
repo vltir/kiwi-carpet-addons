@@ -11,6 +11,7 @@ import static net.minecraft.server.command.CommandManager.*;
 public class TickCommands {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         registerTickSprintEasyInterrupt(dispatcher);
+        registerTickWarpAlias(dispatcher);
     }
 
     public static void registerTickSprintEasyInterrupt(CommandDispatcher<ServerCommandSource> dispatcher) {
@@ -40,5 +41,25 @@ public class TickCommands {
                 .build();
         sprintNode.getChildren().forEach(newSprintNode::addChild);
         tickNode.addChild(newSprintNode);
+    }
+
+    public static void registerTickWarpAlias(CommandDispatcher<ServerCommandSource> dispatcher) {
+        CommandNode<ServerCommandSource> tickNode = dispatcher.getRoot().getChild("tick");
+        if (tickNode == null) {
+            LOGGER.warn("tick command not found");
+            return;
+        }
+        CommandNode<ServerCommandSource> sprintNode = tickNode.getChild("sprint");
+        if (sprintNode == null) {
+            LOGGER.warn("tick sprint command not found");
+            return;
+        }
+
+        tickNode.addChild(literal("warp")
+                .requires(source -> KiwiSettings.tickWarpAlias)
+                .executes(sprintNode.getCommand())
+                .redirect(sprintNode)
+                .build()
+        );
     }
 }

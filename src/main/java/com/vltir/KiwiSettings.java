@@ -14,6 +14,6 @@ public class KiwiSettings {
     public static boolean tickSprintEasyInterrupt = false;
 
     @Rule(categories = {KIWI, CREATIVE, COMMAND})
-    public static boolean tickWarpRelay = false;
+    public static boolean tickWarpAlias = false;
 
 }

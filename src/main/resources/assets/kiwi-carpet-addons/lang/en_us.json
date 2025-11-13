@@ -4,6 +4,6 @@
   "carpet.rule.tickFreezeToggle.desc": "Allow tick freeze command to unfreeze the game when frozen.",
   "carpet.rule.tickSprintEasyInterrupt.name": "Tick Sprint Easy Interrupt",
   "carpet.rule.tickSprintEasyInterrupt.desc": "Allow tick freeze command without additional parameters to interrupt a sprint.",
-  "carpet.rule.tickWarpRelay.name": "Tick Warp Relay",
-  "carpet.rule.tickWarpRelay.desc": "Allow tick sprints via tick warp command."
+  "carpet.rule.tickWarpAlias.name": "Tick Warp Alias",
+  "carpet.rule.tickWarpAlias.desc": "Allow tick sprints via tick warp command."
 }
